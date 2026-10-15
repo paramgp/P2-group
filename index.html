@@ -137,6 +137,42 @@ summary{cursor:pointer;font-weight:600;color:var(--teal-d)}
 .tag{display:inline-block;margin-left:8px;font:600 .72rem var(--sans);padding:2px 9px;border-radius:99px;background:var(--accent-l);color:var(--accent);font-style:normal}
 .empty{padding:30px;text-align:center;color:var(--muted)}
 
+/* sandbox */
+.sandbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 18px 40px -24px rgba(10,63,69,.5);width:100%;max-width:470px;margin-left:auto}
+.sb-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.sb-title{display:flex;align-items:center;gap:8px;font:600 .84rem/1.3 var(--sans);color:var(--ink)}
+.dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pl 1.6s ease-in-out infinite}
+@keyframes pl{50%{opacity:.35;transform:scale(1.4)}}
+.sb-pill{font:600 .68rem var(--sans);background:var(--teal-l);color:var(--teal-d);padding:3px 10px;border-radius:99px}
+.sb-tabs{display:flex;gap:6px;margin-bottom:12px}
+.sb-tabs button{flex:1;font:600 .76rem var(--sans);padding:8px 6px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);cursor:pointer;transition:.15s}
+.sb-tabs button:hover{background:var(--teal-l)}
+.sb-tabs button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.sb-stage{position:relative;height:210px;border-radius:12px;background:#07191c;overflow:hidden}
+.sb-stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.sb-glow{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;filter:blur(30px);opacity:.4;background:var(--gc,#3b66f5);animation:gl 3s ease-in-out infinite;transition:background .4s}
+@keyframes gl{50%{opacity:.18;transform:scale(1.25)}}
+.sb-note{font-size:.72rem;color:var(--muted);font-style:italic;text-align:center;margin:8px 0 10px}
+.sb-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sb-stats div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.sb-stats small{display:block;font:700 .6rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sb-stats b{display:block;font:600 .8rem/1.3 var(--sans);color:var(--teal-d);margin-top:3px}
+@media (max-width:860px){.sandbox{margin:0 auto}}
+@media (prefers-reduced-motion:reduce){.dot,.sb-glow{animation:none}}
+
+.sb-opts{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.sb-opts .row{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:.72rem;color:var(--muted)}
+.sb-opts .row b{font-weight:600;margin-right:2px}
+.sb-opts button{font:600 .72rem var(--sans);padding:4px 10px;border:1px solid var(--line);border-radius:99px;background:#fff;color:var(--ink);cursor:pointer}
+.sb-opts button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.sb-tabs{flex-wrap:wrap}.sb-tabs button{flex:1 1 auto;font-size:.72rem}
+.sb-legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.sb-legend span{font:600 .7rem var(--sans);padding:3px 9px;border-radius:99px;border:1px solid;display:inline-flex;gap:6px;align-items:center}
+.sb-legend span::before{content:"";width:14px;height:3px;border-radius:2px;background:currentColor}
+.lg-s{color:#0f8f86;border-color:#bfe6e2;background:#effaf9}.lg-p{color:#b4570f;border-color:#f3d6b8;background:#fdf4ea}.lg-n{color:#475569;border-color:#e2e8f0;background:#f8fafc}
+.sb-text{font-size:.82rem;line-height:1.5;margin:10px 0}
+.sb-src{font-size:.72rem;color:var(--muted);margin:10px 0 0}
+.sb-stage{height:190px}
 /* gallery slideshow */
 .slider{max-width:980px;margin:0 auto;outline-offset:6px}
 .stage{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#0b1f22;border:1px solid var(--line);box-shadow:0 18px 40px -22px rgba(10,63,69,.55);touch-action:pan-y}
@@ -249,26 +285,21 @@ footer{background:#07292d;color:#9fb9bb;padding:28px 0;font-size:.88rem;text-ali
           <a class="btn ghost" href="#join">Join the group</a>
         </div>
       </div>
-      <svg class="hero-art" viewBox="0 0 400 360" role="img" aria-label="Decorative molecular network">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b8a93"/><stop offset="1" stop-color="#0a3f45"/></linearGradient>
-        </defs>
-        <g stroke="#0f5c63" stroke-width="5" stroke-linecap="round" opacity=".55">
-          <line x1="200" y1="60" x2="90" y2="140"/><line x1="200" y1="60" x2="310" y2="140"/>
-          <line x1="90" y1="140" x2="90" y2="260"/><line x1="310" y1="140" x2="310" y2="260"/>
-          <line x1="90" y1="260" x2="200" y2="320"/><line x1="310" y1="260" x2="200" y2="320"/>
-          <line x1="90" y1="140" x2="200" y2="190"/><line x1="310" y1="140" x2="200" y2="190"/>
-          <line x1="200" y1="190" x2="200" y2="320"/><line x1="200" y1="60" x2="200" y2="190"/>
-        </g>
-        <circle cx="200" cy="60" r="26" fill="url(#g1)"/>
-        <circle cx="90" cy="140" r="22" fill="#b4572b"/>
-        <circle cx="310" cy="140" r="22" fill="#b4572b"/>
-        <circle cx="90" cy="260" r="18" fill="#1b8a93"/>
-        <circle cx="310" cy="260" r="18" fill="#1b8a93"/>
-        <circle cx="200" cy="190" r="34" fill="url(#g1)"/>
-        <circle cx="200" cy="320" r="22" fill="#b4572b"/>
-        <circle cx="200" cy="190" r="50" fill="none" stroke="#0f5c63" stroke-width="2" stroke-dasharray="4 8" opacity=".5"/>
-      </svg>
+      <div class="sandbox" id="sandbox">
+        <div class="sb-head">
+          <span class="sb-title"><i class="dot"></i><span id="sbTitle"></span></span>
+          <span class="sb-pill">Bonding Explorer</span>
+        </div>
+        <div class="sb-tabs" id="sbTabs" role="group" aria-label="Choose a system from our papers"></div>
+        <div class="sb-opts" id="sbOpts"></div>
+        <div class="sb-stage" id="sbStage">
+          <canvas id="sbCanvas" role="img" aria-label="Animated bonding diagram of the selected system"></canvas>
+        </div>
+        <div class="sb-legend" id="sbLegend"></div>
+        <p class="sb-text" id="sbText"></p>
+        <div class="sb-stats" id="sbStats"></div>
+        <p class="sb-src" id="sbSrc"></p>
+      </div>
     </div>
     </div>
 </section>
@@ -399,7 +430,7 @@ footer{background:#07292d;color:#9fb9bb;padding:28px 0;font-size:.88rem;text-ali
       <li><b>Dr. Parvathy P.</b><span>Postdoctoral offer, Chalmers University of Technology, Sweden</span></li>
       <li><b>Dr. Rinsha C. H.</b></li>
       <li><b>Dr. Diana Mathew</b></li>
-      <li><b>Dr. Sneha P.</b><span>HSST (Jr.) Chemistry, Govt. HSS, Ottapalam, Palakkad</span></li>
+      <li><b>Dr. Sneha Parambath</b><span>HSST (Jr.) Chemistry, Govt. HSS, Ottapalam, Palakkad</span></li>
       <li><b>Dr. Muhasina P. V.</b><span>Nava Kerala Postdoctoral Fellow, University of Calicut</span></li>
       <li><b>Dr. Anjana George</b><span>Assistant Professor, Govt. Polytechnic College, Periya, Kasargod</span></li>
       <li><b>Dr. Indu P.</b></li>
@@ -446,7 +477,7 @@ footer{background:#07292d;color:#9fb9bb;padding:28px 0;font-size:.88rem;text-ali
       <div class="stage" id="stage">
         <button type="button" class="sbtn prev" id="sp" aria-label="Previous photo">&#8249;</button>
         <button type="button" class="sbtn next" id="sn" aria-label="Next photo">&#8250;</button>
-        <div class="smeta"><span id="sc">1/11</span><button type="button" id="spp" aria-label="Pause slideshow">Pause</button></div>
+        <div class="smeta"><span id="sc">1/10</span><button type="button" id="spp" aria-label="Pause slideshow">Pause</button></div>
         <div class="sbar" id="sbar"></div>
       </div>
       <div class="thumbs" id="thumbs" aria-label="Photo thumbnails"></div>
@@ -561,8 +592,8 @@ const PI_NAME = "P. Parameswaran";
 const P = [
 [103,2026,"M. K. Pandey, Z. Hendi, X. Wang, S. Muhammed, R. Herbst-Irmer, D. Stalke, P. Parameswaran, H. W. Roesky","A bis(phosphasilene) featuring non-conjugated Si=P double bonds","Chem. Commun. 2026","10.1039/d6cc03111k"],
 [102,2026,"V. Archana, P. K. Sudhadevi Antharjanam, P. Parameswaran, L. Chakkumkumarath","Benzofuran-based donor–acceptor fluorophores: impact of regioisomerism on photophysical properties and visible-light-driven reversible E/Z photoisomerization","Org. Chem. Front. 2026, 13 (19), 6681–6699","10.1039/d6qo00757k"],
-[101,2026,"A. C. Sathyadevan Nair, A. Rajan, K. P. Adarsh Raj, D. Basumatary, K. P. Murali, P. Parameswaran, C. S. Suchand Sangeeth, R. Chatanathodi, V. S. Reddy","Organophosphorus Ligand-coordinated ZnO Cathode Buffer Layers in Organic Solar Cells – Work Function Reduction and Performance Enhancement","Appl. Phys. Lett. 2026, 128, 123904","10.1063/5.0287889"],
-[100,2026,"F. Thanha, P. Parameswaran","Cationic beryllium–group 13 heterobimetallic dimetallocenes with a donor–acceptor bond","Dalton Trans. 2026, 55, 1140–1148","10.1039/D5DT02345A"],
+[101,2026,"A. C. Sathyadevan Nair, A. Rajan, K. P. Adarsh Raj, D. Basumatary, K. Murali, P. Parameswaran, C. S. Suchand Sangeeth, R. Chatanathodi, V. S. Reddy","Organophosphorus Ligand-coordinated ZnO Cathode Buffer Layers in Organic Solar Cells – Work Function Reduction and Performance Enhancement","Appl. Phys. Lett. 2026, 128, 123904","10.1063/5.0287889"],
+[100,2026,"F. Thanha Thazhe Namboorikandy, P. Parameswaran","Cationic beryllium–group 13 heterobimetallic dimetallocenes with a donor–acceptor bond","Dalton Trans. 2026, 55, 1140–1148","10.1039/D5DT02345A"],
 [99,2025,"M. K. Pandey, Z. Hendi, X. Wang, S. Muhammed, A. Kumar, M. K. Singh, R. Herbst-Irmer, D. Stalke, P. Parameswaran, H. W. Roesky","Synthesis and characterization of triazole-functionalized mixed-valent Si(I)–Si(III) and bis(germylene) compounds","Chem. Commun. 2025, 61, 5581–5584","10.1039/D4CC06247G"],
 [98,2025,"S. Muhammed, P. Parameswaran","Pseudo-silapnictene and Bis(Pseudo-silapnictene) – Hyperconjugatively Stabilized Heavier Analogues of Imine and Ethane-1,2-diimine","Eur. J. Inorg. Chem. 2025, 28, e202400722","10.1002/ejic.202400722"],
 [97,2024,"A. C. S. Nair, A. Rajan, K. P. A. Raj, A. M. Rajendran, M. R. Benny, K. Murali, P. Parameswaran, C. S. S. Sangeeth, R. Chatanathodi, V. S. Reddy","Fine Tuning the Work Function of ZnO Cathode Buffer Layers in Organic Solar Cells by Phenanthroline Coordination","ACS Appl. Energy Mater. 2024, 7, 19, 9011–9022","10.1021/acsaem.4c02155"],
@@ -572,7 +603,7 @@ const P = [
 [93,2024,"S. Muhammed, P. Parameswaran","Mechanistic Insights into the [3+1] Cycloadditions of Me₃SiN₃ on Bis-silylene and the Formation of Pseudo-Silaazatriene","Eur. J. Inorg. Chem. 2024, e202400031","10.1002/ejic.202400031"],
 [92,2024,"S. K. Purkayastha, S. S. Rohman, P. Parameswaran, A. K. Guha","Beryllium Carbonyl Be(CO)ₙ (n = 1–4) Complex: A p-Orbital Analogy of Dewar–Chatt–Duncanson Model","Phys. Chem. Chem. Phys. 2024, 26, 12573–12579","10.1039/D4CP00908H"],
 [91,2024,"S. Muhammed, H. Manojkumar, P. Parameswaran","Schwesinger Bases – Phosphazene Bases Stabilized by Multiple Counterpoise Hyperconjugative Interactions","ChemistrySelect 2024, 9, e202304332","10.1002/slct.202304332"],
-[90,2024,"J. S. Gopinath, N. Vadakkathodika, P. Parameswaran","Carbone Stabilized B₂ and B₂²⁺ – Isoelectronic Analogous to Diborabutyne and Diborabutatriene","Dalton Trans. 2024, 53, 3880–3892","10.1039/D3DT04358D"],
+[90,2024,"J. S. Gopinath, N. Vadakkathodika, P. Parameswaran","Carbone Stabilized B₂ and B₂²⁺ – Isoelectronic Analogues to Diborabutyne and Diborabutatriene","Dalton Trans. 2024, 53, 3880–3892","10.1039/D3DT04358D"],
 [89,2023,"S. K. Kushvaha, P. Kallenbach, S. S. Rohman, M. K. Pandey, Z. Hendi, F. Rüttger, R. Herbst-Irmer, D. Stalke, P. Parameswaran, H. W. Roesky","A Neutral Planar Four-Membered Si₂B₂ 2π-Aromatic Ring","J. Am. Chem. Soc. 2023, 145, 25523","10.1021/jacs.3c09131"],
 [88,2023,"S. Kumar, P. Parameswaran, A. Jana, E. D. Jemmis","Lewis Acid Stabilized Diatomic Molecules of Group 14: A Computational Study on [(CO)₄Fe]₂E₂, E = C, Si, Ge, Sn, Pb","J. Phys. Chem. A 2023, 127, 9442","10.1021/acs.jpca.3c04376"],
 [87,2023,"K. Shuruooque, D. Mathew, P. Parameswaran, S. S. Anjaly, U. K. Narayanan, C. Lakshmi","Substituent Controlled Photophysical Responses in Dihydropyridine Derivatives and their Application in the Detection of Volatile Organic Contaminants","J. Org. Chem. 2023, 88, 15007","10.1021/acs.joc.3c01455"],
@@ -594,7 +625,7 @@ const P = [
 [71,2023,"P. V. Muhasina, P. Parameswaran","σ vs π Radicals: Tuning the Electronic Nature of Neutral Carbon(I) Compounds with Three Non-Bonding electrons","J. Comput. Chem. 2023, 44, 422","10.1002/jcc.26964"],
 [70,2022,"J. Hossain, J. S. Gopinath, S. Tothadi, P. Parameswaran, S. Khan","NHSi/NHGe-Supported Copper Halide and Pseudohalide Complexes: Synthesis and Application","Organometallics 2022, 41, 3706","10.1021/acs.organomet.2c00480"],
 [69,2022,"Y. Ding, S. K. Sarkar, M. Nazish, P. N. Ruth, R. Herbst-Irmer, S. Muhammed, P. Parameswaran, D. Stalke, H. W. Roesky","Insertion reaction of Me₃SiN₃ with Bis(germylene)","Inorg. Chem. 2022, 61, 19067","10.1021/acs.inorgchem.2c02252"],
-[68,2022,"P. Sneha, P. Parameswaran","Two σ and two π Dative Quadruple Bonds between the s-block Element and Transition Metal in [BeM(CO)₄] (M = Fe, Ru, Os)","Phys. Chem. Chem. Phys. 2022, 24, 20183","10.1039/d2cp02331h","PCCP HOT article 2022"],
+[68,2022,"S. Parambath, P. Parameswaran","Two σ- and two π-dative quadruple bonds between the s-block element and transition metal in [BeM(CO)₄; M = Fe–Os]","Phys. Chem. Chem. Phys. 2022, 24, 20183","10.1039/d2cp02331h","PCCP HOT article 2022"],
 [67,2022,"R. Akthar, S. H. Kaulage, M. P. Sangole, S. Tothadi, P. Parvathy, K. Singh, S. Khan, P. Parameswaran","First Row Transition Metal Complexes of Phosphine-Silylene based Hybrid Ligand","Inorg. Chem. 2022, 61, 13330","10.1021/acs.inorgchem.2c01233"],
 [66,2022,"M. Nazish, Y. Ding, C. M. Legendre, A. Kumar, N. Graw, B. Schwederski, R. Herbst-Irmer, P. Parvathy, P. Parameswaran, D. Stalke, W. Kaim, H. W. Roesky","Excellent yield of a variety of silicon-boron radicals and their reactivity","Dalton Trans. 2022, 51, 11040","10.1039/d2dt01318e"],
 [65,2022,"S. Kumar Sarkar, S. Kundu, M. Nazish, J. Kretsch, R. Herbst-Irmer, D. Stalke, P. Parvathy, P. Parameswaran, H. W. Roesky","A Carbene-Stabilized Boryl-Phosphinidene","Chem. Eur. J. 2022, 28, e202200913","10.1002/chem.202200913"],
@@ -640,7 +671,7 @@ const P = [
 [25,2014,"K. C. Mondal, S. Roy, S. De, P. Parameswaran, B. Dittrich, F. Ehret, W. Kaim, H. W. Roesky","Stabilization of a Two-Coordinate Mononuclear Cobalt(0) compound","Chem. Eur. J. 2014, 20, 11646","10.1002/chem.201403525"],
 [24,2014,"G. Frenking, R. Tonner, S. Klein, N. Takagi, T. Shimizu, A. Krapp, K. K. Pandey, P. Parameswaran","New Bonding Modes of Carbon and Heavier Group 14 Atoms Si–Pb","Chem. Soc. Rev. 2014, 43, 5106","10.1039/C4CS00073K"],
 [23,2014,"R. Soman, S. Sujatha, S. De, V. C. Rojisha, P. Parameswaran, B. Varghese, C. Arunkumar","Intermolecular Interactions in Fluorinated Tetraarylporphyrins – An Experimental and Theoretical Study","Eur. J. Inorg. Chem. 2014, 2014, 2653","10.1002/ejic.201402008"],
-[22,2014,"K. C. Mondal, P. Samuel, Y. Li, H. W. Roesky, S. Roy, L. Ackermann, N. S. Sidhu, G. M. Sheldrick, E. Carl, S. Demeshko, S. De, P. Parameswaran, L. Ungur, L. F. Chibotaru, D. M. Andrada","A Catalyst with Two-Coordinate Nickel: Theoretical and Catalytic Studies","Eur. J. Inorg. Chem. 2014, 2014, 818","10.1002/ejic.201301598"],
+[22,2014,"K. C. Mondal, P. P. Samuel, Y. Li, H. W. Roesky, S. Roy, L. Ackermann, N. S. Sidhu, G. M. Sheldrick, E. Carl, S. Demeshko, S. De, P. Parameswaran, L. Ungur, L. F. Chibotaru, D. M. Andrada","A Catalyst with Two-Coordinate Nickel: Theoretical and Catalytic Studies","Eur. J. Inorg. Chem. 2014, 2014, 818","10.1002/ejic.201301598"],
 [21,2014,"Y. Li, K. C. Mondal, J. Lübben, H. Zhu, B. Dittrich, I. Purushothaman, P. Parameswaran, H. W. Roesky","A Functionalized Ge₃-compound with a Dual Character of the Central Germanium Atom","Chem. Commun. 2014, 50, 2986","10.1039/C3CC49635J"],
 [20,2013,"V. C. Rojisha, K. Nijesh, S. De, P. Parameswaran","Singlet 2-adamantylidene – an ambiphilic foiled carbene stabilized by hyperconjugation","Chem. Commun. 2013, 49, 8465","10.1039/C3CC44509G"],
 [19,2013,"C. Anusha, S. De, P. Parameswaran","Ring contraction of six-membered metallabenzynes to five-membered metal–carbene complexes: a comparison with organic analogues","Dalton Trans. 2013, 42, 14733","10.1039/C3DT51428E","Hot Article"],
@@ -708,6 +739,100 @@ q.addEventListener("input", render);
 sel.addEventListener("change", render);
 render();
 
+/* ---------- Bonding Explorer (hero) ----------
+   Every system below is taken from one of our papers. Only facts stated in the papers'
+   titles/abstracts are used: no calculated numbers are invented. Edit/extend BX to add more. */
+const NODE = {Be:"#22d3ee", M:"#94a3b8", L:"#a78bfa", B:"#f472b6", C:"#e2e8f0", Zn:"#93c5fd", P:"#fcd34d"};
+const BX = {
+ be:{tab:"[BeM(CO)₄]", title:"[BeM(CO)₄] – dative quadruple M–Be bond",
+  ref:"S. Parambath, P. Parameswaran, Phys. Chem. Chem. Phys. 2022, 24, 20183", doi:"10.1039/d2cp02331h",
+  level:"Geometries BP86/def2-TZVPP; bonding by EDA-NOCV (BP86/TZ2P)",
+  opts:[{k:"M",label:"Metal",vals:["Fe","Ru","Os"]}],
+  build:o=>({nodes:[{x:.27,t:"Be",c:NODE.Be},{x:.73,t:o.M+"(CO)₄",c:NODE.M}],
+   arrows:[{a:0,b:1,k:"s",lab:"Be → M σ",y:-21},{a:1,b:0,k:"s",lab:"M → Be σ",y:-7},{a:1,b:0,k:"p",lab:"M → Be π",y:7},{a:1,b:0,k:"p",lab:"M → Be π",y:21}],
+   text:"Neutral 18-electron beryllium complexes in trigonal-bipyramidal geometry. The M–Be bond is best described as a dative quadruple bond made of two σ and two π components. High proton and hydride affinities show that beryllium is ambiphilic.",
+   tiles:[["Bond","Dative quadruple"],["Geometry","Trigonal bipyramidal"],["Be centre","Ambiphilic"]]})},
+ bex:{tab:"M–BeX₂", title:"[(PMe₃)₂M–BeX₂] – transition metal → beryllium donation",
+  ref:"P. Parameswaran, G. Frenking, J. Phys. Chem. A 2010, 114, 8529", doi:"10.1021/jp910181q",
+  level:"DFT, BP86/TZ2P; energy decomposition analysis",
+  opts:[{k:"M",label:"Metal",vals:["Ni","Pd","Pt"]},{k:"X",label:"BeX₂",vals:["Cl₂","ClMe","Me₂"]}],
+  build:o=>{const w={"Cl₂":3.2,"ClMe":2.3,"Me₂":1.5}[o.X];
+   return {nodes:[{x:.27,t:"(PMe₃)₂"+o.M,c:NODE.M},{x:.73,t:{"Cl₂":"BeCl₂","ClMe":"BeClMe","Me₂":"BeMe₂"}[o.X],c:NODE.Be}],
+   arrows:[{a:0,b:1,k:"s",lab:"M → Be σ",y:-9,w},{a:0,b:1,k:"p",lab:"M → Be π",y:9,w}],
+   text:"Energy decomposition shows two donor–acceptor bonds, σ and π, in which the transition-metal fragment is a double donor to beryllium. The bond strength decreases when the substituent on beryllium changes from Cl to CH₃ (arrow thickness).",
+   tiles:[["Donor–acceptor bonds","σ + π"],["Metal fragment","Double donor"],["Be substituent",o.X==="Cl₂"?"Cl (strongest)":o.X==="Me₂"?"CH₃ (weakest)":"Cl / CH₃"]]}}},
+ cb:{tab:"Carbone–B₂", title:"[(L₂C)·B₂·(CL₂)] – carbone-stabilised diboron",
+  ref:"J. S. Gopinath, N. Vadakkathodika, P. Parameswaran, Dalton Trans. 2024, 53, 3880", doi:"10.1039/D3DT04358D",
+  level:"M06/def2-TZVPP//BP86/def2-TZVPP",
+  opts:[{k:"S",label:"State",vals:["Neutral","Dication"]},{k:"L",label:"L",vals:["NHC","PMe₃","CO","cAAC"],when:o=>o.S==="Dication"}],
+  build:o=>{const dic=o.S==="Dication", trip=dic&&(o.L==="CO"||o.L==="cAAC"), dy=trip?24:0;
+   return {nodes:[{x:.18,y:-dy,t:"C(L)₂",c:NODE.C},{x:.5,t:dic?"B₂²⁺":"B₂",c:NODE.B},{x:.82,y:dy,t:"C(L)₂",c:NODE.C}],
+   arrows:[{a:0,b:1,k:"s",lab:"carbone → B₂ (σ-type lone pair)",y:-6},{a:0,b:1,k:"p",lab:"carbone → B₂ (π-type lone pair)",y:6},{a:2,b:1,k:"s",lab:"carbone → B₂ (σ-type lone pair)",y:-6},{a:2,b:1,k:"p",lab:"carbone → B₂ (π-type lone pair)",y:6}],
+   text:dic?"In the dication each carbone acts as a four-electron ligand: one localised B–B π MO and two delocalised C–B–B–C π MOs. For L = NHC or PMe₃ the ground state is a singlet planar (cumulenic) geometry; for CO and cAAC it is a triplet non-planar cumulene.":
+            "The neutral compound can be viewed as B₂ in its ¹Σg⁺ excited state interacting with two carbone ligands that have σ- and π-type lone pairs. Because of allylic C–B–B π-delocalisation, each carbone formally acts as a two-electron ligand.",
+   tiles:[["Carbone acts as",dic?"4-electron ligand":"2-electron ligand"],["Ground state",dic?(trip?"Triplet, non-planar":"Singlet, planar"):"–"],["Analogue of","Diborabutyne / diborabutatriene"]]}}},
+ al:{tab:"Allene [(μ-C)(Fe(CO)₄)₂]", title:"Organometallic allene [(μ-C)(Fe(CO)₄)₂]",
+  ref:"P. Parvathy, P. Parameswaran, ChemPhysChem 2023, 24, e202300528", doi:"10.1002/cphc.202300528",
+  opts:[],
+  build:o=>({nodes:[{x:.2,t:"Fe(CO)₄",c:NODE.M},{x:.5,t:"C",c:NODE.C},{x:.8,t:"Fe(CO)₄",c:NODE.M}],
+   arrows:[{a:1,b:0,k:"s",lab:"C → Fe σ",y:-6},{a:0,b:1,k:"p",lab:"Fe → C π",y:6},{a:1,b:2,k:"s",lab:"C → Fe σ",y:-6},{a:2,b:1,k:"p",lab:"Fe → C π",y:6}],
+   text:"The bridging carbon shows a transformation from classical electron-sharing bonding to a ligand that is a double σ-donor and a double π-acceptor, in contrast with an organic allene.",
+   tiles:[["σ-donation","Double"],["π-acceptance","Double"],["Bonding model","Dative, not electron-sharing"]]})},
+ zn:{tab:"ZnO·Phen", title:"Phenanthroline-coordinated ZnO cathode buffer layers",
+  ref:"A. C. S. Nair et al., ACS Appl. Energy Mater. 2024, 7, 9011", doi:"10.1021/acsaem.4c02155",
+  level:"Experimental study of inverted organic solar cells (PTB7:PC₇₀BM)",
+  opts:[{k:"P",label:"Ligand",vals:["Phen-A","Phen-B","Phen-C"]}],
+  build:o=>{const d={"Phen-A":["1,10-",13.2,"Lowest"],"Phen-B":["4,7-",7.8,"Reduced"],"Phen-C":["1,7-",6.7,"Reduced"]}[o.P];
+   return {nodes:[{x:.27,t:o.P,sub:d[0]+"phenanthroline",c:NODE.P},{x:.73,t:"ZnO (Zn)",c:NODE.Zn}],
+   arrows:[{a:0,b:1,k:"s",lab:"N lone pair → Zn",y:-8},{a:0,b:1,k:"s",lab:"N lone pair → Zn",y:8}],
+   text:"Donation of the nitrogen lone pairs to Zn raises the Fermi energy and lowers the work function of ZnO. Phen-A (1,10-phenanthroline) gives the lowest work function. X-ray photoelectron spectroscopy shows Zn–N bond formation and fewer oxygen-deficiency defects.",
+   tiles:[["PCE enhancement","+"+d[1].toFixed(1)+"%"],["Work function of ZnO",d[2]],["Ligand",o.P+" ("+d[0]+")"]]}}}
+};
+const sbCv = $("#sbCanvas"), sbCtx = sbCv.getContext("2d"), sbStage = $("#sbStage");
+const sbReduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const SBC = {s:"#2dd4bf", p:"#fbbf24", n:"#cbd5e1"};
+let sbKey = "be", sbOpt = {}, sbModel = null, sbPhase = 0, sbW = 0, sbH = 0, sbVisible = true;
+function sbResize(){ const d = window.devicePixelRatio || 1; sbW = sbStage.clientWidth; sbH = sbStage.clientHeight; sbCv.width = sbW*d; sbCv.height = sbH*d; sbCtx.setTransform(d,0,0,d,0,0); }
+function rr(x,y,w,h,r){ sbCtx.beginPath(); sbCtx.moveTo(x+r,y); sbCtx.arcTo(x+w,y,x+w,y+h,r); sbCtx.arcTo(x+w,y+h,x,y+h,r); sbCtx.arcTo(x,y+h,x,y,r); sbCtx.arcTo(x,y,x+w,y,r); sbCtx.closePath(); }
+function sbDraw(){
+  const c = sbCtx, m = sbModel; c.clearRect(0,0,sbW,sbH); if(!m) return;
+  c.font = "600 13px Inter, system-ui, sans-serif"; c.textAlign = "center"; c.textBaseline = "middle";
+  const N = m.nodes.map(n => { const tw = c.measureText(n.t).width + 24; return {...n, px:n.x*sbW, py:sbH/2 + (n.y||0), hw:tw/2}; });
+  m.arrows.forEach((ar,i) => {
+    const A = N[ar.a], B = N[ar.b], dir = B.px > A.px ? 1 : -1;
+    const x1 = A.px + dir*(A.hw+4), y1 = A.py + ar.y, x2 = B.px - dir*(B.hw+4), y2 = B.py + ar.y;
+    const ang = Math.atan2(y2-y1, x2-x1), col = SBC[ar.k] || SBC.n, w = ar.w || 2;
+    c.strokeStyle = col; c.fillStyle = col; c.lineWidth = w; c.beginPath(); c.moveTo(x1,y1); c.lineTo(x2,y2); c.stroke();
+    c.beginPath(); c.moveTo(x2,y2); c.lineTo(x2-9*Math.cos(ang-.45),y2-9*Math.sin(ang-.45)); c.lineTo(x2-9*Math.cos(ang+.45),y2-9*Math.sin(ang+.45)); c.closePath(); c.fill();
+    for(let j=0;j<2;j++){ const t = sbReduce ? .3+j*.4 : ((sbPhase*.35 + j*.5 + i*.13) % 1); c.beginPath(); c.arc(x1+(x2-x1)*t, y1+(y2-y1)*t, 3+w*.4, 0, 6.2832); c.fillStyle = "#fff"; c.globalAlpha = .9; c.fill(); c.globalAlpha = 1; }
+  });
+  N.forEach(n => { rr(n.px-n.hw, n.py-19, n.hw*2, 38, 10); c.fillStyle = n.c; c.fill(); c.fillStyle = "#06222a"; c.fillText(n.t, n.px, n.py+1);
+    if(n.sub){ c.font = "500 10px Inter, system-ui, sans-serif"; c.fillStyle = "#94a3b8"; c.fillText(n.sub, n.px, n.py+34); c.font = "600 13px Inter, system-ui, sans-serif"; } });
+}
+function sbRender(){
+  const d = BX[sbKey]; sbModel = d.build(sbOpt);
+  $("#sbTitle").textContent = d.title; $("#sbText").textContent = sbModel.text;
+  const lg = {}; sbModel.arrows.forEach(a => { const k = a.lab; lg[k] = lg[k] || {n:0,k:a.k}; lg[k].n++; });
+  $("#sbLegend").innerHTML = Object.entries(lg).map(([l,v]) => `<span class="lg-${v.k}">${l}${v.n>1?" ×"+v.n:""}</span>`).join("");
+  $("#sbStats").innerHTML = sbModel.tiles.map(t => `<div><small>${t[0]}</small><b>${t[1]}</b></div>`).join("");
+  $("#sbSrc").innerHTML = `Source: ${d.ref}. <a href="https://doi.org/${d.doi}" target="_blank" rel="noopener">doi:${d.doi}</a>` + (d.level ? `<br>${d.level}` : "") + `<br><em>Schematic diagram drawn from the published results, not a new calculation.</em>`;
+  $("#sbOpts").innerHTML = "";
+  d.opts.filter(o => !o.when || o.when(sbOpt)).forEach(o => {
+    const row = document.createElement("div"); row.className = "row"; row.innerHTML = `<b>${o.label}:</b>`;
+    o.vals.forEach(v => { const b = document.createElement("button"); b.type = "button"; b.textContent = v; if(sbOpt[o.k] === v) b.className = "on";
+      b.addEventListener("click", () => { sbOpt[o.k] = v; sbRender(); }); row.appendChild(b); });
+    $("#sbOpts").appendChild(row);
+  });
+  document.querySelectorAll("#sbTabs button").forEach(b => { const on = b.dataset.k === sbKey; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+  sbDraw();
+}
+function sbPick(k){ sbKey = k; sbOpt = {}; BX[k].opts.forEach(o => sbOpt[o.k] = o.vals[0]); sbRender(); }
+Object.entries(BX).forEach(([k,d]) => { const b = document.createElement("button"); b.type = "button"; b.dataset.k = k; b.textContent = d.tab; b.addEventListener("click", () => sbPick(k)); $("#sbTabs").appendChild(b); });
+new ResizeObserver(() => { sbResize(); sbDraw(); }).observe(sbStage);
+new IntersectionObserver(es => { sbVisible = es[0].isIntersecting; }).observe(sbStage);
+(function loop(){ if(sbVisible && !document.hidden && !sbReduce){ sbPhase += 0.016; sbDraw(); } requestAnimationFrame(loop); })();
+sbResize(); sbPick("be");
+
 /* ---------- Inquiry form (opens the visitor's email app) ---------- */
 $("#inq").addEventListener("submit", e => {
   e.preventDefault();
@@ -732,7 +857,6 @@ const G = [
  ["fd95d4_bbd83a5797ea491881e66b91f103d934~mv2.jpeg",""],
  ["fd95d4_3fce0a2930a04445b2e3cccb9b1de0a2~mv2.jpeg",""],
  ["fd95d4_80cb40823385403d85c596de1457ae06~mv2.jpg",""],
- ["11062b_ae0a9e5f152f4bae86bcbd16d87ee52ef000.jpg",""],
  ["fd95d4_1427f45a04854c9ba6796f74a918b0b7~mv2.jpg","Group dinner – PhD party. Thanks to Dr. Parvathy P."],
  ["fd95d4_a496cbdb547441c49f71557d6b2477f6~mv2.jpg","Group photo after Parvathy’s successful thesis defence"],
  ["fd95d4_2dc807a059a74d57b0bb3aea198e9db0~mv2.jpg","Dr. Diana took the group out for dinner to celebrate her doctorate"],
